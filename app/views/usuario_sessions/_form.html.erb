@@ -1,0 +1,25 @@
+<%= form_tag usuario_sessions_path, :method => :post do %>
+
+  <div class="row">
+    <div class="small-3 columns">
+      <%= label_tag :email, class: "right inline" %>
+    </div>
+    <div class="small-9 columns"><%= text_field_tag :email %></div>
+  </div>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= label_tag :password, class: "right inline" %>
+    </div>
+    <div class="small-9 columns"><%= password_field_tag :password %></div>
+  </div>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= label_tag :remember_me, class: "right inline" %>
+    </div>
+    <div class="small-9 columns"><%= check_box_tag :remember_me, 1, params[:remember_me] %></div>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Login" %>
+  </div>
+<% end %>
+

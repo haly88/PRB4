@@ -11,13 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226045758) do
+ActiveRecord::Schema.define(version: 20150107162427) do
 
   create_table "products", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.decimal  "price"
+    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string   "email",                        null: false
+    t.string   "crypted_password",             null: false
+    t.string   "salt",                         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
+  end
+
+  add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true
+  add_index "usuarios", ["remember_me_token"], name: "index_usuarios_on_remember_me_token"
 
 end

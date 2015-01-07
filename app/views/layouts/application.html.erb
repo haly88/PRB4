@@ -10,26 +10,33 @@
 	<nav class="top-bar">
 	  <ul class="title-area">
 	    <li class="name">
-	      <h1><%= link_to "Awesome Store", products_path %></a></h1>
+	      <h1><%= link_to "PRB4", products_path %></a></h1>
 	    </li>
 	  </ul>
 	  <section class="top-bar-section">
-	    <ul class="right">
-	      <li class="divider"></li>
-	      <li><%= link_to "Browse Products", products_path %></li>
-	      <li class="divider"></li>
-	      <li><%= link_to "Price List" %></li>
-	      <li class="divider"></li>
-	      <li><%= link_to "Contact Us" %></li>
-	      <li class="divider"></li>
-	      <li><%= link_to "Cart" %></li>
-	    </ul>
+	    <% if current_user %>	
+	    	<ul class="left">
+    			<li class="divider"></li>
+			    <li><%= link_to "Browse Products", products_path %></li>
+			    <li class="divider"></li>
+			    <li><%= link_to "Price List" %></li>
+			    <li class="divider"></li>
+			    <li><%= link_to "Contact Us" %></li>
+			    <li class="divider"></li>
+			    <li><%= link_to "Cart" %></li>
+			</ul>
+			<ul class="right">
+	    		<li> <%= link_to "log out #{current_user.email}", :logout, method: :post %> </li>
+         		<li> <%= link_to 'Editar usuario', edit_usuario_path(current_user) %> </li>
+         	</ul>
+	    <% else %>
+	    	<ul class="right">
+	    		<li> <%= link_to "Register", new_usuario_path %> </li>
+         		<li> <%= link_to "Login", :login %> </li>
+         	</ul>
+        <% end %>
 	  </section>
 	</nav>
 	<div class="large-12 columns"><%= yield %></div>
-
-
-
-
 </body>
 </html>
