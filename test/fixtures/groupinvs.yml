@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  personasMin: 1
+  personasMax: 1
+  montoIngreso: 
+  montoMensual: 
+  esAdministrador: false
+
+two:
+  nombre: MyString
+  personasMin: 1
+  personasMax: 1
+  montoIngreso: 
+  montoMensual: 
+  esAdministrador: false

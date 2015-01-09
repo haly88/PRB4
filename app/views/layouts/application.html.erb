@@ -37,6 +37,10 @@
         <% end %>
 	  </section>
 	</nav>
+		<div>
+	    	<p id="notice"><%= flash[:notice] %></p>
+	    	<p id="alert"><%= flash[:alert] %></p>
+	  	</div>
 	<div class="large-12 columns"><%= yield %></div>
 </body>
 </html>

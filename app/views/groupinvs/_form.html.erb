@@ -1,0 +1,41 @@
+<%= form_for(@groupinv) do |f| %>
+  <% if @groupinv.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@groupinv.errors.count, "error") %> prohibited this groupinv from being saved:</h2>
+
+      <ul>
+      <% @groupinv.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :personasMin %><br>
+    <%= f.number_field :personasMin %>
+  </div>
+  <div class="field">
+    <%= f.label :personasMax %><br>
+    <%= f.number_field :personasMax %>
+  </div>
+  <div class="field">
+    <%= f.label :montoIngreso %><br>
+    <%= f.text_field :montoIngreso %>
+  </div>
+  <div class="field">
+    <%= f.label :montoMensual %><br>
+    <%= f.text_field :montoMensual %>
+  </div>
+  <div class="field">
+    <%= f.label :esAdministrador %><br>
+    <%= f.check_box :esAdministrador %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

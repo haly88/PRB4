@@ -1,7 +1,5 @@
 class Usuario < ActiveRecord::Base
   
-  has_many :posts
-  
   authenticates_with_sorcery!
 
   validates :password, length: { minimum: 3 }

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @groupinv.nombre %>
+</p>
+
+<p>
+  <strong>Personasmin:</strong>
+  <%= @groupinv.personasMin %>
+</p>
+
+<p>
+  <strong>Personasmax:</strong>
+  <%= @groupinv.personasMax %>
+</p>
+
+<p>
+  <strong>Montoingreso:</strong>
+  <%= @groupinv.montoIngreso %>
+</p>
+
+<p>
+  <strong>Montomensual:</strong>
+  <%= @groupinv.montoMensual %>
+</p>
+
+<p>
+  <strong>Esadministrador:</strong>
+  <%= @groupinv.esAdministrador %>
+</p>
+
+<%= link_to 'Edit', edit_groupinv_path(@groupinv) %> |
+<%= link_to 'Back', groupinvs_path %>

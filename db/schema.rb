@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107162427) do
+ActiveRecord::Schema.define(version: 20150108231644) do
+
+  create_table "groupinvs", force: :cascade do |t|
+    t.string   "nombre"
+    t.integer  "personasMin"
+    t.integer  "personasMax"
+    t.decimal  "montoIngreso",    precision: 12, scale: 2
+    t.decimal  "montoMensual",    precision: 12, scale: 2
+    t.boolean  "esAdministrador"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string   "name"

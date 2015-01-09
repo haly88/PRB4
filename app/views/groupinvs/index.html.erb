@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Groupinvs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Personasmin</th>
+      <th>Personasmax</th>
+      <th>Montoingreso</th>
+      <th>Montomensual</th>
+      <th>Esadministrador</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groupinvs.each do |groupinv| %>
+      <tr>
+        <td><%= groupinv.nombre %></td>
+        <td><%= groupinv.personasMin %></td>
+        <td><%= groupinv.personasMax %></td>
+        <td><%= groupinv.montoIngreso %></td>
+        <td><%= groupinv.montoMensual %></td>
+        <td><%= groupinv.esAdministrador %></td>
+        <td><%= link_to 'Show', groupinv %></td>
+        <td><%= link_to 'Edit', edit_groupinv_path(groupinv) %></td>
+        <td><%= link_to 'Destroy', groupinv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Groupinv', new_groupinv_path %>
