@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :products
   resources :usuario_sessions
-  resources :usuarios
+  resources :usuarios do
+    member do
+      get :activate
+    end
+  end
   
   get 'login' => 'usuario_sessions#new', :as => :login
   post 'logout' => 'usuario_sessions#destroy', :as => :logout

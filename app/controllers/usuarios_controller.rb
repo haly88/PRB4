@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
   
-  skip_before_filter :require_login, only: [:index, :new, :create, :show]
+  skip_before_filter :require_login, only: [:index, :new, :create, :activate]
   
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
@@ -64,6 +64,15 @@ class UsuariosController < ApplicationController
     end
   end
 
+  def activate
+    if (@usuario = Usuario.load_from_activation_token(params[:id]))
+      @usuario.activate!
+      redirect_to(login_path, :notice => 'usuario was successfully activated.')
+    else
+      not_authenticated
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_usuario
@@ -72,7 +81,7 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:email, :password, :password_confirmation)
+      params.require(:usuario).permit(:email, :email_confirmation, :password, :password_confirmation)
     end
 end
 
