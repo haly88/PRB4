@@ -25,7 +25,7 @@ class GroupinvsController < ApplicationController
   # POST /groupinvs.json
   def create
     @groupinv = Groupinv.new(groupinv_params)
-
+    @groupinv.groupinv_usuarios.new(usuario_id: current_user.id, administrador: true)
     respond_to do |format|
       if @groupinv.save
         format.html { redirect_to @groupinv, notice: 'Groupinv was successfully created.' }
@@ -69,6 +69,7 @@ class GroupinvsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def groupinv_params
-      params.require(:groupinv).permit(:nombre, :personasMin, :personasMax, :montoIngreso, :montoMensual, :esAdministrador)
+      params.require(:groupinv).permit(:nombre, :personasMin, :personasMax, 
+        :montoIngreso, :montoMensual, :esAdministrador)
     end
 end

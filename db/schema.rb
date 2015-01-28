@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109163654) do
+ActiveRecord::Schema.define(version: 20150113224555) do
+
+  create_table "groupinv_usuarios", force: :cascade do |t|
+    t.integer  "groupinv_id"
+    t.integer  "usuario_id"
+    t.boolean  "administrador"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "groupinv_usuarios", ["groupinv_id"], name: "index_groupinv_usuarios_on_groupinv_id"
+  add_index "groupinv_usuarios", ["usuario_id"], name: "index_groupinv_usuarios_on_usuario_id"
 
   create_table "groupinvs", force: :cascade do |t|
     t.string   "nombre"

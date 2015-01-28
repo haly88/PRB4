@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  groupinv_id: 
+  usuario_id: 
+  administrador: false
+
+two:
+  groupinv_id: 
+  usuario_id: 
+  administrador: false
