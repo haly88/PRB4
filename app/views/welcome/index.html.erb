@@ -4,7 +4,7 @@
 	</div>
 	<div class="small-6 columns">
 		<% @groupinvs.each do |groupinv| %>
-		    <%= groupinv.full_group %></br>
+		    <%= link_to groupinv.full_group, groupinv_path(groupinv) %></br>
 		<% end %>
 	</div>
 </div>

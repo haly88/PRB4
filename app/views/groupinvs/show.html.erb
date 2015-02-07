@@ -1,3 +1,11 @@
+<div>
+  <% if @usuario_pertenece == true %>
+    <%= link_to 'Salir del Groupinv' %>
+  <% else %>
+    <h1>Unirse al Groupinv</h1>
+  <% end %>
+</div>
+
 <p>
   <strong>Nombre:</strong>
   <%= @groupinv.nombre %>
@@ -27,6 +35,13 @@
   <strong>Esadministrador:</strong>
   <%= @groupinv.esAdministrador %>
 </p>
+
+<div>
+  <h1>Usuarios</h1>
+  <% @groupinv.usuarios.each do |usuario| %>
+    <%= usuario.email %></br>
+  <% end %>
+</div>
 
 <%= link_to 'Edit', edit_groupinv_path(@groupinv) %> |
 <%= link_to 'Back', groupinvs_path %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :groupinv_usuarios
   resources :groupinvs
 
   resources :products

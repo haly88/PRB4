@@ -10,6 +10,11 @@ class GroupinvsController < ApplicationController
   # GET /groupinvs/1
   # GET /groupinvs/1.json
   def show
+    @groupinv.usuarios.each do |usuario|
+      if usuario == current_user
+        @usuario_pertenece = true
+      end
+    end
   end
 
   # GET /groupinvs/new
@@ -28,7 +33,7 @@ class GroupinvsController < ApplicationController
     @groupinv.groupinv_usuarios.new(usuario_id: current_user.id, administrador: true)
     respond_to do |format|
       if @groupinv.save
-        format.html { redirect_to @groupinv, notice: 'Groupinv was successfully created.' }
+        format.html { redirect_to @groupinv, notice: 'Groupinv Guardado' }
         format.json { render :show, status: :created, location: @groupinv }
       else
         format.html { render :new }

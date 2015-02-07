@@ -10,7 +10,7 @@
 	<nav class="top-bar">
 	  <ul class="title-area">
 	    <li class="name">
-	      <h1><%= link_to "PRB4", products_path %></a></h1>
+	      <h1><%= link_to "PRB4", root_path %></a></h1>
 	    </li>
 	  </ul>
 	  <section class="top-bar-section">
@@ -37,10 +37,13 @@
         <% end %>
 	  </section>
 	</nav>
-		<div>
+		<!-- <div>
 	    	<p id="notice"><%= flash[:notice] %></p>
 	    	<p id="alert"><%= flash[:alert] %></p>
-	  	</div>
+	  	</div> -->
+	  	<% if notice %>	
+			<%= notice.to_s.upcase %>
+		<% end %>
 	<div class="large-12 columns"><%= yield %></div>
 </body>
 </html>
