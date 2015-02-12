@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :groupinv_usuarios
+  resources :groupinv_usuarios, only: [:destroy, :create]
   resources :groupinvs
 
   resources :products

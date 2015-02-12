@@ -1,8 +1,8 @@
 <div>
   <% if @usuario_pertenece == true %>
-    <%= link_to 'Salir del Groupinv' %>
+    <%= link_to 'Salir del Groupinv', groupinv_usuario_path(groupinv: @groupinv), method: :delete %>
   <% else %>
-    <h1>Unirse al Groupinv</h1>
+    <%= link_to 'Unirse al Groupinv', groupinv_usuarios_path(groupinv: @groupinv), method: :post %>
   <% end %>
 </div>
 
@@ -39,7 +39,8 @@
 <div>
   <h1>Usuarios</h1>
   <% @groupinv.usuarios.each do |usuario| %>
-    <%= usuario.email %></br>
+    <%= usuario.email %>
+    <%= usuario.administrador %></br>
   <% end %>
 </div>
 
