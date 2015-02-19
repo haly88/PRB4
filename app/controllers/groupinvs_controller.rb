@@ -14,6 +14,9 @@ class GroupinvsController < ApplicationController
       if usuario == current_user
         @usuario_pertenece = true
       end
+      unless @groupinv_usuario.administrador.nil?
+        @usuario_administrador = true
+      end
     end
   end
 
@@ -70,6 +73,7 @@ class GroupinvsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_groupinv
       @groupinv = Groupinv.find(params[:id])
+      @groupinv_usuario = @groupinv.groupinv_usuarios.find_by(usuario: current_user.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
