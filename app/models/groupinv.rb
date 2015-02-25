@@ -7,4 +7,11 @@ class Groupinv < ActiveRecord::Base
 		[nombre, personasMin, personasMax].compact.join(' ')
 	end
 	
+	def usuario_pertenece?(current_user)
+		control = false
+		usuarios.each do |usuario|
+			control = true if usuario == current_user
+		end
+		control
+    end
 end

@@ -1,6 +1,7 @@
 <div>
-  <% if @usuario_pertenece == true %>
-      <% if @usuario_administrador == true %>
+  <% if @groupinv.usuario_pertenece?(current_user) %>
+      <% if @groupinv.groupinv_usuarios.find_by(usuario: current_user).administrador
+ %>
         <%= link_to 'Borrar Groupinv', groupinv_path(@groupinv), method: :delete %>
       <% else %>
         <%= link_to 'Salir del Groupinv', groupinv_usuario_path(groupinv: @groupinv), method: :delete %>

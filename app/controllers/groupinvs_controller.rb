@@ -10,21 +10,6 @@ class GroupinvsController < ApplicationController
   # GET /groupinvs/1
   # GET /groupinvs/1.json
   def show
-    @usuario_pertenece = false
-    @usuario_administrador = false
-
-    @groupinv.usuarios.each do |usuario|
-      if usuario == current_user
-        @usuario_pertenece = true
-      end
-    end
-
-    unless @groupinv_usuario.nil?
-      if @groupinv_usuario.administrador == true
-        @usuario_administrador = true
-      end
-    end
-
   end
 
   # GET /groupinvs/new
@@ -80,7 +65,6 @@ class GroupinvsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_groupinv
       @groupinv = Groupinv.find(params[:id])
-      @groupinv_usuario = @groupinv.groupinv_usuarios.find_by(usuario: current_user.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
