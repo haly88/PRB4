@@ -31,7 +31,7 @@ class UsuariosController < ApplicationController
 
     respond_to do |format|
       if @usuario.save
-        format.html { redirect_to @usuario, notice: 'Usuario was successfully created.' }
+        format.html { redirect_to @root_path, notice: 'El usuario ha sido creado con exito, se ha enviado un email a su casilla de correo con los detalles para activar el mismo.' }
         format.json { render action: 'show', status: :created, location: @usuario }
       else
         format.html { render action: 'new' }
@@ -67,7 +67,7 @@ class UsuariosController < ApplicationController
   def activate
     if (@usuario = Usuario.load_from_activation_token(params[:id]))
       @usuario.activate!
-      redirect_to(login_path, :notice => 'usuario was successfully activated.')
+      redirect_to(login_path, :notice => 'El usuario ha sido activado con exito.')
     else
       not_authenticated
     end
@@ -81,7 +81,8 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:email, :email_confirmation, :password, :password_confirmation)
+      params.require(:usuario).permit(:email, :email_confirmation, :password, :password_confirmation,
+        :nombre, :apellido, :es_empresa)
     end
 end
 

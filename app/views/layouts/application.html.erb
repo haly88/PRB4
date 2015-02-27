@@ -22,28 +22,25 @@
 			    <li><%= link_to "Usuarios", usuarios_path %></li>
 			    <li class="divider"></li>
 			    <li><%= link_to "GroupInvs", groupinvs_path %></li>
-			    <li class="divider"></li>
-			    <li><%= link_to "Cart" %></li>
 			</ul>
 			<ul class="right">
 	    		<li> <%= link_to "log out #{current_user.email}", :logout, method: :post %> </li>
+	    		<li class="divider"></li>
          		<li> <%= link_to 'Editar usuario', edit_usuario_path(current_user) %> </li>
          	</ul>
 	    <% else %>
 	    	<ul class="right">
 	    		<li> <%= link_to "Register", new_usuario_path %> </li>
+	    		<li class="divider"></li>
          		<li> <%= link_to "Login", :login %> </li>
          	</ul>
         <% end %>
 	  </section>
 	</nav>
-		<!-- <div>
+		<div>
 	    	<p id="notice"><%= flash[:notice] %></p>
 	    	<p id="alert"><%= flash[:alert] %></p>
-	  	</div> -->
-	  	<% if notice %>	
-			<%= notice.to_s.upcase %>
-		<% end %>
+	  	</div> 
 	<div class="large-12 columns"><%= yield %></div>
 </body>
 </html>

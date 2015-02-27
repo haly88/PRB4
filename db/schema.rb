@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113224555) do
+ActiveRecord::Schema.define(version: 20150225130516) do
 
   create_table "groupinv_usuarios", force: :cascade do |t|
     t.integer  "groupinv_id"
@@ -54,6 +54,9 @@ ActiveRecord::Schema.define(version: 20150113224555) do
     t.string   "activation_state"
     t.string   "activation_token"
     t.datetime "activation_token_expires_at"
+    t.string   "nombre"
+    t.string   "apellido"
+    t.boolean  "es_empresa"
   end
 
   add_index "usuarios", ["activation_token"], name: "index_usuarios_on_activation_token"
