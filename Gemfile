@@ -1,30 +1,31 @@
 source 'https://rubygems.org'
+#ruby-gemset=PRB4
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '1.3.10'
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sass-rails', '5.0.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
+gem 'uglifier', '2.6.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails'
+gem 'coffee-rails', '4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '4.0.2'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '2.5.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder'
+gem 'jbuilder', '2.2.6'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc',          group: :doc
+gem 'sdoc', '0.4.1',         group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'spring', '1.2.0',       group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -38,6 +39,10 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'foundation-rails'
+gem 'foundation-rails', '5.5.0.0'
 
-gem 'sorcery'
+gem 'sorcery', '0.8.6'
+
+# gem 'execjs', '2.2.2'
+
+gem 'therubyracer', '0.12.1'
