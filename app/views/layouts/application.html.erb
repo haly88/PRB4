@@ -22,6 +22,10 @@
 			    <li><%= link_to "Usuarios", usuarios_path %></li>
 			    <li class="divider"></li>
 			    <li><%= link_to "GroupInvs", groupinvs_path %></li>
+			    <% if current_user.es_empresa %>
+			    	<li class="divider"></li>
+			    	<li><%= link_to "Proyectos", root_path %></li>
+			    <% end %>
 			</ul>
 			<ul class="right">
 	    		<li> <%= link_to "log out #{current_user.email}", :logout, method: :post %> </li>
@@ -30,9 +34,11 @@
          	</ul>
 	    <% else %>
 	    	<ul class="right">
-	    		<li> <%= link_to "Register", new_usuario_path %> </li>
+	    		<li> <%= link_to "Registrar Usuario", new_usuario_path %> </li>
 	    		<li class="divider"></li>
-         		<li> <%= link_to "Login", :login %> </li>
+	    		<li> <%= link_to "Registrar Empresa", new_usuario_path(tipo: 'empresa') %> </li>
+	    		<li class="divider"></li>
+         		<li> <%= link_to "Ingresar", :login %> </li>
          	</ul>
         <% end %>
 	  </section>

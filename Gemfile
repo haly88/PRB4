@@ -38,6 +38,7 @@ gem 'spring', '1.2.0',       group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'pry-rails', '0.3.3', :group => :development
 
 gem 'foundation-rails', '5.5.0.0'
 

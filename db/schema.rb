@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150225130516) do
     t.string   "nombre"
     t.string   "apellido"
     t.boolean  "es_empresa"
+    t.string   "razon_social"
   end
 
   add_index "usuarios", ["activation_token"], name: "index_usuarios_on_activation_token"

@@ -11,21 +11,17 @@
     </div>
   <% end %>
 
+  <h1>Empresa</h1>
+
   <div class="row">
     <div class="small-3 columns">
-      <%= f.hidden_field :es_empresa%>
+      <%= f.hidden_field :es_empresa, value: true %>
     </div>
-  </div>
+  </div> 
   <div class="row">
     <div class="small-3 columns">
-      <%= f.label :nombre%>
-      <%= f.text_field :nombre%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :apellido%>
-      <%= f.text_field :apellido%>
+      <%= f.label :razon_social%>
+      <%= f.text_field :razon_social%>
     </div>
   </div>
   <div class="row">

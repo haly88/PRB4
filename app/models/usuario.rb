@@ -6,11 +6,11 @@ class Usuario < ActiveRecord::Base
   has_many :groupinvs, through: :groupinv_usuarios
 
   validates :password, length: { minimum: 3 }
-  validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  validates :password, :email, confirmation: true
+  validates :password_confirmation, :email_confirmation, presence: true
   validates :email, uniqueness: true
-  validates :email, confirmation: true
-  validates :email_confirmation, presence: true
-  validates :nombre, presence: true
+  validates :razon_social, presence: true, if: :es_empresa
+  validates :nombre, :apellido, presence: true, unless: :es_empresa
+
   
 end

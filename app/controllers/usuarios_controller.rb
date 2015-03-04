@@ -18,6 +18,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios/new
   def new
     @usuario = Usuario.new
+    @usuario.es_empresa = params[:tipo] == 'empresa'
   end
 
   # GET /usuarios/1/edit
@@ -28,10 +29,9 @@ class UsuariosController < ApplicationController
   # POST /usuarios.json
   def create
     @usuario = Usuario.new(usuario_params)
-
     respond_to do |format|
       if @usuario.save
-        format.html { redirect_to @root_path, notice: 'El usuario ha sido creado con exito, se ha enviado un email a su casilla de correo con los detalles para activar el mismo.' }
+        format.html { redirect_to root_path, notice: 'El usuario ha sido creado con exito, se ha enviado un email a su casilla de correo con los detalles para activar el mismo.' }
         format.json { render action: 'show', status: :created, location: @usuario }
       else
         format.html { render action: 'new' }
@@ -82,7 +82,7 @@ class UsuariosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
       params.require(:usuario).permit(:email, :email_confirmation, :password, :password_confirmation,
-        :nombre, :apellido, :es_empresa)
+        :nombre, :apellido, :es_empresa, :razon_social)
     end
 end
 
