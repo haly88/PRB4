@@ -22,10 +22,8 @@
 			    <li><%= link_to "Usuarios", usuarios_path %></li>
 			    <li class="divider"></li>
 			    <li><%= link_to "GroupInvs", groupinvs_path %></li>
-			    <% if current_user.es_empresa %>
-			    	<li class="divider"></li>
-			    	<li><%= link_to "Proyectos", root_path %></li>
-			    <% end %>
+		    	<li class="divider"></li>
+		    	<li><%= link_to "Proyectos", proyectos_path %></li>
 			</ul>
 			<ul class="right">
 	    		<li> <%= link_to "log out #{current_user.email}", :logout, method: :post %> </li>

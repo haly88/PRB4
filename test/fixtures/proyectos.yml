@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  cuota_inicial: 9.99
+  cuota_mensual: 9.99
+  usuario_id: 
+
+two:
+  nombre: MyString
+  cuota_inicial: 9.99
+  cuota_mensual: 9.99
+  usuario_id: 

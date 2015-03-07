@@ -4,6 +4,7 @@ class Usuario < ActiveRecord::Base
 
   has_many :groupinv_usuarios, dependent: :destroy
   has_many :groupinvs, through: :groupinv_usuarios
+  has_many :proyectos
 
   validates :password, length: { minimum: 3 }
   validates :password, :email, confirmation: true
