@@ -1,11 +1,10 @@
 <h1>Welcome</h1>
-<div class="row">
 	<%= render "groupinvs/search_fields" %>
-</div>
 <div class="row">
-	<div class="small-6 columns">
+	<div class="columns medium-6">
+		algo
 	</div>
-	<div class="small-6 columns">
+	<div class="columns medium-6">
 		<% @groupinvs.each do |groupinv| %>
 		    <%= link_to groupinv.full_group, groupinv_path(groupinv) %></br>
 		<% end %>
