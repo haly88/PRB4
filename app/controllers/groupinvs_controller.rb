@@ -4,7 +4,8 @@ class GroupinvsController < ApplicationController
   # GET /groupinvs
   # GET /groupinvs.json
   def index
-    @groupinvs = Groupinv.all
+    @search = Groupinv.search(params[:q])
+    @groupinvs = @search.result
   end
 
   # GET /groupinvs/1

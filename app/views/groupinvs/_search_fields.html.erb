@@ -1,0 +1,13 @@
+<%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :nombre_cont, "Nombre" %>
+    <%= f.text_field :nombre_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :montoIngreso_gteq, "Monto Ingreso desde" %>
+    <%= f.number_field :montoIngreso_gteq %>
+    <%= f.label :montoIngreso_lteq, "and" %>
+    <%= f.number_field :montoIngreso_lteq %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>

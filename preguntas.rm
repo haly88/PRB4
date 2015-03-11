@@ -1,7 +1,5 @@
 * Porque no puedo usar current_user en los modelos?
 
-* Registrar empresa, como pasar el parametro?
-
 * Ver bien como funcionan las migraciones?
 
-* Porque no me guarda es_empresa si no pongo el widget?
+* Mejorar funciones ruby (usuario_pertenece?)

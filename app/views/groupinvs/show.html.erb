@@ -41,12 +41,23 @@
   <%= @groupinv.esAdministrador %>
 </p>
 
-<div>
-  <h1>Usuarios</h1>
+<div class="small-6 columns">
+  <h3>Usuarios</h1>
   <% @groupinv.usuarios.each do |usuario| %>
-    <%= usuario.email %></br>
+    <%= usuario.email %>
+    <%= @groupinv.groupinv_usuarios.find_by(usuario: usuario).administrador %>
+    <%= link_to 'Borrar', groupinv_usuario_path(groupinv: @groupinv, usuario: usuario), method: :delete unless usuario == current_user %></br>
   <% end %>
 </div>
+<div class="small-6 columns">
+  <h3>Proyectos</h1>
+    <% if current_user.proyectos.any? %>
+      <%= link_to 'Proponer Proyecto', root_path %>
+    <% end %>
+</div>
 
-<%= link_to 'Edit', edit_groupinv_path(@groupinv) %> |
-<%= link_to 'Back', root_path %>
+<div>
+  <%= link_to 'Edit', edit_groupinv_path(@groupinv) %> |
+  <%= link_to 'Back', root_path %>
+</div>
+

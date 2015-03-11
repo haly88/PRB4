@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :proyecto_usuarios, only: [:destroy, :create]
   resources :proyectos
 
   resources :groupinv_usuarios, only: [:destroy, :create]

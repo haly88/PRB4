@@ -1,0 +1,26 @@
+### Codigo para Ransack
+
+#widgets de busqueda
+
+<%= search_form_for @search do |f| %>
+  <div class="field">
+  #Nombre muy importante :campo_condicion, cont = contenido
+    <%= f.label :nombre_cont, "Nombre" %>
+    <%= f.text_field :nombre_cont %>
+  </div>
+  <div class="field">
+  #mayoy igual y menor igual
+    <%= f.label :montoIngreso_gteq, "Monto Ingreso desde" %>
+    <%= f.number_field :montoIngreso_gteq %>
+    <%= f.label :montoIngreso_lteq, "and" %>
+    <%= f.number_field :montoIngreso_lteq %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
+#Controler
+
+def index
+	@search = Groupinv.search(params[:q])
+	@groupinvs = @search.result
+end

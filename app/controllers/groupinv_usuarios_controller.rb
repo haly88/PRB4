@@ -26,7 +26,11 @@ class GroupinvUsuariosController < ApplicationController
 	private
     # Use callbacks to share common setup or constraints between actions.
     def set_groupinv_usuario
-      @groupinv_usuario = GroupinvUsuario.find_by(usuario: current_user.id, groupinv: params[:groupinv])
+    	if params[:usuario].nil?
+    		@groupinv_usuario = GroupinvUsuario.find_by(usuario: current_user.id, groupinv: params[:groupinv])
+    	else
+    		@groupinv_usuario = GroupinvUsuario.find_by(usuario: params[:usuario], groupinv: params[:groupinv])
+      	end
     end
 
 end

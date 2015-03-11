@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<%= render "search_fields" %>
+
 <h1>Listing Groupinvs</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Personasmin</th>
-      <th>Personasmax</th>
+      <th><%= sort_link @search, :nombre, "Nombre" %></th>
+      <th><%= sort_link @search, :personasMin, "Persona Min" %></th>
+      <th><%= sort_link @search, :personasMax, "Personas Max" %></th>
       <th>Montoingreso</th>
       <th>Montomensual</th>
       <th>Esadministrador</th>
