@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308235535) do
+ActiveRecord::Schema.define(version: 20150312131656) do
+
+  create_table "groupinv_proyectos", force: :cascade do |t|
+    t.integer  "groupinv_id"
+    t.integer  "proyecto_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "groupinv_proyectos", ["groupinv_id"], name: "index_groupinv_proyectos_on_groupinv_id"
+  add_index "groupinv_proyectos", ["proyecto_id"], name: "index_groupinv_proyectos_on_proyecto_id"
 
   create_table "groupinv_usuarios", force: :cascade do |t|
     t.integer  "groupinv_id"

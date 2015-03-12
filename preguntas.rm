@@ -3,3 +3,7 @@
 * Ver bien como funcionan las migraciones?
 
 * Mejorar funciones ruby (usuario_pertenece?)
+
+* Mejorar controladores de groupinv_usuarios, groupinv_proyectos?
+
+* has_many vs has_one?

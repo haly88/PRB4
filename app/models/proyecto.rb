@@ -1,3 +1,7 @@
 class Proyecto < ActiveRecord::Base
-  belongs_to :usuario
+
+	has_many :groupinv_proyectos, dependent: :destroy
+	has_many :groupinvs, through: :groupinv_proyectos
+
+  	belongs_to :usuario
 end

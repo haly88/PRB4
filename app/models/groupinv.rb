@@ -3,6 +3,9 @@ class Groupinv < ActiveRecord::Base
 	has_many :groupinv_usuarios, dependent: :destroy
 	has_many :usuarios, through: :groupinv_usuarios
 
+	has_many :groupinv_proyectos, dependent: :destroy
+	has_many :proyectos, through: :groupinv_proyectos
+
 	def full_group
 		[nombre, personasMin, personasMax].compact.join(' ')
 	end
