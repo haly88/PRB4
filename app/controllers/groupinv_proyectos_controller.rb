@@ -3,7 +3,7 @@ class GroupinvProyectosController < ApplicationController
 	before_action :set_groupinv_proyecto, only: :destroy
 
 	def create
-    @groupinv_proyecto = GroupinvProyecto.new(usuario_id: current_user.id, groupinv_id: params[:groupinv])
+    @groupinv_proyecto = GroupinvProyecto.new(groupinv_id: params[:groupinv] )
 	    respond_to do |format|
 	      if @groupinv_proyecto.save
 	        format.html { redirect_to root_path, notice: 'groupinv_proyecto Guardado' }

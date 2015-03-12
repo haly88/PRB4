@@ -3,7 +3,7 @@ class GroupinvUsuariosController < ApplicationController
 	before_action :set_groupinv_usuario, only: :destroy
 
 	def create
-    @groupinv_usuario = GroupinvUsuario.new(usuario_id: current_user.id, groupinv_id: params[:groupinv])
+    @groupinv_usuario = GroupinvUsuario.new(usuario: current_user, groupinv_id: params[:groupinv])
 	    respond_to do |format|
 	      if @groupinv_usuario.save
 	        format.html { redirect_to root_path, notice: 'groupinv_usuario Guardado' }

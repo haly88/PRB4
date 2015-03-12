@@ -17,7 +17,7 @@
             <li><%= link_to "Proyectos", proyectos_path %></li>
         </ul>
         <ul class="right">
-            <li> <%= link_to "log out #{current_user.email}", :logout, method: :post %> </li>
+            <li> <%= link_to "log out #{current_user.email}", logout_path, method: :post %> </li>
             <li class="divider"></li>
               <li> <%= link_to 'Editar usuario', edit_usuario_path(current_user) %> </li>
             </ul>
@@ -27,7 +27,7 @@
             <li class="divider"></li>
             <li> <%= link_to "Registrar Empresa", new_usuario_path(tipo: 'empresa') %> </li>
             <li class="divider"></li>
-              <li> <%= link_to "Ingresar", :login %> </li>
+              <li> <%= link_to "Ingresar", login_path %> </li>
             </ul>
           <% end %>
       </section>

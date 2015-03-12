@@ -52,7 +52,7 @@
 <div class="small-6 columns">
   <h3>Proyectos</h1>
     <% if current_user.proyectos.any? %>
-      <%= link_to 'Proponer Proyecto', root_path %>
+      <%= link_to 'Proponer Proyecto', groupinv_proyecto_path(groupinv: @groupinv, proyecto: 4), method: :post %>
     <% end %>
 </div>
 
