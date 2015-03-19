@@ -26,7 +26,7 @@ class GroupinvsController < ApplicationController
   # POST /groupinvs.json
   def create
     @groupinv = Groupinv.new(groupinv_params)
-    @groupinv.groupinv_usuarios.new(usuario_id: current_user.id, administrador: true)
+    @groupinv.groupinv_usuarios.new(usuario: current_user, administrador: true)
     respond_to do |format|
       if @groupinv.save
         format.html { redirect_to @groupinv, notice: 'Groupinv Guardado' }

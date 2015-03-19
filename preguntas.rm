@@ -7,3 +7,9 @@
 * Mejorar controladores de groupinv_usuarios, groupinv_proyectos?
 
 * has_many vs has_one?
+
+* para que sirve "<<"
+
+* estan bien los controladores de grupoinvsusuarios y gruopinv?
+
+* groupinv_id: params[:groupinv]?

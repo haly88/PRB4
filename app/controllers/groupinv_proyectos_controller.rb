@@ -3,7 +3,8 @@ class GroupinvProyectosController < ApplicationController
 	before_action :set_groupinv_proyecto, only: :destroy
 
 	def create
-    @groupinv_proyecto = GroupinvProyecto.new(groupinv_id: params[:groupinv] )
+    #@groupinv_proyecto = GroupinvProyecto.new(groupinv_id: params[:groupinv], proyecto_id: params[:proyecto])
+    @groupinv_proyecto = GroupinvProyecto.new(groupinv_proyecto_params)
 	    respond_to do |format|
 	      if @groupinv_proyecto.save
 	        format.html { redirect_to root_path, notice: 'groupinv_proyecto Guardado' }
@@ -31,6 +32,11 @@ class GroupinvProyectosController < ApplicationController
     	else
     		@groupinv_proyecto = GroupinvProyecto.find_by(usuario: params[:usuario], groupinv: params[:groupinv])
       	end
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def groupinv_proyecto_params
+      params.require(:groupinv_proyecto).permit(:groupinv, :proyecto)
     end
 
 end

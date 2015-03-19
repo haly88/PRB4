@@ -17,4 +17,8 @@ class Groupinv < ActiveRecord::Base
 		end
 		control
     end
+
+    def administrador?(usuario)
+    	self.groupinv_usuarios.find_by(usuario: usuario).administrador.present?
+    end
 end

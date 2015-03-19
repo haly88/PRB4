@@ -1,7 +1,6 @@
 <div>
   <% if @groupinv.usuario_pertenece?(current_user) %>
-      <% if @groupinv.groupinv_usuarios.find_by(usuario: current_user).administrador
- %>
+      <% if @groupinv.administrador?(current_user) %>
         <%= link_to 'Borrar Groupinv', groupinv_path(@groupinv), method: :delete %>
       <% else %>
         <%= link_to 'Salir del Groupinv', groupinv_usuario_path(groupinv: @groupinv), method: :delete %>
@@ -45,14 +44,17 @@
   <h3>Usuarios</h1>
   <% @groupinv.usuarios.each do |usuario| %>
     <%= usuario.email %>
-    <%= @groupinv.groupinv_usuarios.find_by(usuario: usuario).administrador %>
-    <%= link_to 'Borrar', groupinv_usuario_path(groupinv: @groupinv, usuario: usuario), method: :delete unless usuario == current_user %></br>
+    <% if @groupinv.usuario_pertenece?(current_user) %>
+      <% if @groupinv.administrador?(current_user) %>
+        <%= link_to 'Borrar', groupinv_usuario_path(groupinv: @groupinv, usuario: usuario), method: :delete  unless usuario == current_user %>
+      <% end -%>
+    <% end -%></br>
   <% end %>
 </div>
 <div class="small-6 columns">
   <h3>Proyectos</h1>
     <% if current_user.proyectos.any? %>
-      <%= link_to 'Proponer Proyecto', groupinv_proyecto_path(groupinv: @groupinv, proyecto: 4), method: :post %>
+      <%= link_to 'Proponer Proyecto', groupinv_proyectos_path(groupinv: @groupinv, proyecto: 4), method: :post %>
     <% end %>
 </div>
 
