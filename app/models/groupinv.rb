@@ -6,6 +6,8 @@ class Groupinv < ActiveRecord::Base
 	has_many :groupinv_proyectos, dependent: :destroy
 	has_many :proyectos, through: :groupinv_proyectos
 
+	accepts_nested_attributes_for :groupinv_proyectos, :allow_destroy => true, :reject_if => lambda { |a| a[:monto].blank? or a[:fecha].blank? }
+
 	def full_group
 		[nombre, personasMin, personasMax].compact.join(' ')
 	end

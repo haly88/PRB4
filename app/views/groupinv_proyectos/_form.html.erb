@@ -1,5 +1,12 @@
 <%= form_for(@groupinv_proyecto) do |f| %>
-	<div>
-		<%= f.hidden_field :groupinv,  %>
+	<div class="row">
+		<div class="columns small-6">
+			<%= f.hidden_field :groupinv_id %>
+			<%= f.label :proyecto_id, "Proponer proyectos" %>
+			<%= f.collection_select :proyecto_id, Proyecto.all, :id, :nombre, {},{} %>
+		</div>
 	</div>
+	<div class="actions">
+    	<%= f.submit %>
+  	</div>
 <% end -%>

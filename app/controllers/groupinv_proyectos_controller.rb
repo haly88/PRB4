@@ -2,6 +2,11 @@ class GroupinvProyectosController < ApplicationController
 
 	before_action :set_groupinv_proyecto, only: :destroy
 
+	def new
+		@groupinv_proyecto = GroupinvProyecto.new
+		@groupinv_proyecto.groupinv_id = params[:groupinv]
+	end
+
 	def create
     #@groupinv_proyecto = GroupinvProyecto.new(groupinv_id: params[:groupinv], proyecto_id: params[:proyecto])
     @groupinv_proyecto = GroupinvProyecto.new(groupinv_proyecto_params)
@@ -36,7 +41,7 @@ class GroupinvProyectosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def groupinv_proyecto_params
-      params.require(:groupinv_proyecto).permit(:groupinv, :proyecto)
+      params.require(:groupinv_proyecto).permit(:groupinv_id, :proyecto_id)
     end
 
 end
