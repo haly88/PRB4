@@ -53,9 +53,16 @@
 </div>
 <div class="small-6 columns">
   <h3>Proyectos</h1>
+  <div class="row">
+    <% @groupinv.proyectos.each do |proyecto| %>
+      <%= proyecto.nombre %></br>
+    <% end -%>
+  </div>
+  <div class="row">
     <% if current_user.proyectos.any? %>
       <%= link_to 'Proponer Proyecto', new_groupinv_proyecto_path(groupinv: @groupinv) %>
     <% end %>
+  </div>
 </div>
 
 <div>
