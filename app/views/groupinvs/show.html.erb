@@ -1,12 +1,11 @@
-<div>
+<div class="row">
   <% if @groupinv.usuario_pertenece?(current_user) %>
-      <% if @groupinv.administrador?(current_user) %>
-        <%= link_to 'Borrar Groupinv', groupinv_path(@groupinv), method: :delete %>
-      <% else %>
-        <%= link_to 'Salir del Groupinv', groupinv_usuario_path(groupinv: @groupinv), method: :delete %>
-      <% end %>
+    <%= link_to 'Salir del Groupinv', groupinv_usuario_path(groupinv: @groupinv, usuario: current_user), method: :delete %>
   <% else %>
     <%= link_to 'Unirse al Groupinv', groupinv_usuarios_path(groupinv: @groupinv), method: :post %>
+  <% end %>
+  <% if @groupinv.administrador?(current_user) %>
+    <%= link_to 'Borrar Groupinv', groupinv_path(@groupinv), method: :delete %>
   <% end %>
 </div>
 
@@ -44,10 +43,8 @@
   <h3>Usuarios</h1>
   <% @groupinv.usuarios.each do |usuario| %>
     <%= usuario.email %>
-    <% if @groupinv.usuario_pertenece?(current_user) %>
-      <% if @groupinv.administrador?(current_user) %>
-        <%= link_to 'Borrar', groupinv_usuario_path(groupinv: @groupinv, usuario: usuario), method: :delete  unless usuario == current_user %>
-      <% end -%>
+    <% if @groupinv.administrador?(current_user) && usuario != current_user %>
+        <%= link_to 'Borrar', groupinv_usuario_path(groupinv: @groupinv, usuario: usuario), method: :delete %>
     <% end -%></br>
   <% end %>
 </div>
@@ -55,12 +52,26 @@
   <h3>Proyectos</h1>
   <div class="row">
     <% @groupinv.proyectos.each do |proyecto| %>
-      <%= proyecto.nombre %></br>
+      <%= proyecto.nombre %>
+      <% if @groupinv.administrador?(current_user) %>
+        <%= link_to 'Borrar', groupinv_proyecto_path(groupinv: @groupinv, proyecto: proyecto), method: :delete %>
+      <% end -%></br>
     <% end -%>
   </div>
   <div class="row">
     <% if current_user.proyectos.any? %>
-      <%= link_to 'Proponer Proyecto', new_groupinv_proyecto_path(groupinv: @groupinv) %>
+      <%= form_for(@groupinv) do |f| %>
+        <div class="row">
+          <div class="columns small-6">
+            <%= f.hidden_field :id %>
+            <%= f.label :proyecto_ids, "Proponer proyectos" %>
+            <%= f.collection_select :proyecto_ids, Proyecto.where(usuario: current_user), :id, :nombre, {},{multiple: true, class: 'chosen-select'} %>
+          </div>
+        </div>
+        <div class="row actions">
+          <%= f.submit %>
+        </div>
+      <% end -%>
     <% end %>
   </div>
 </div>

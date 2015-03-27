@@ -1,5 +1,0 @@
-<h1>UsuarioMailer#activation_success_email</h1>
-
-<p>
-  <%= @greeting %>, find me in app/views/usuario_mailer/activation_success_email.html.erb
-</p>

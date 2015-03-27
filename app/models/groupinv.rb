@@ -21,6 +21,6 @@ class Groupinv < ActiveRecord::Base
     end
 
     def administrador?(usuario)
-    	self.groupinv_usuarios.find_by(usuario: usuario).administrador.present?
+    	self.groupinv_usuarios.find_by(usuario: usuario).administrador.present? if usuario_pertenece?(usuario)
     end
 end

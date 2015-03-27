@@ -71,6 +71,6 @@ class GroupinvsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def groupinv_params
       params.require(:groupinv).permit(:nombre, :personasMin, :personasMax, 
-        :montoIngreso, :montoMensual, :esAdministrador)
+        :montoIngreso, :montoMensual, :esAdministrador, :proyecto_ids => [])
     end
 end

@@ -49,3 +49,7 @@ gem 'sorcery', '0.8.6'
 gem 'therubyracer', '0.12.1'
 
 gem 'ransack', '1.6.3'
+
+gem 'chosen-rails', '1.4.1'
+
+gem 'jquery-turbolinks', '2.1.0'
