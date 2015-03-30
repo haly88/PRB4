@@ -1,12 +1,8 @@
-<%= form_for(@groupinv) do |f| %>
-	<div class="row">
-		<div class="columns small-6">
-			<%= f.hidden_field :groupinv_id %>
-			<%= f.label :proyecto_id, "Proponer proyectos" %>
-			<%= f.collection_select :proyecto_id, Proyecto.where(usuario: current_user), :id, :nombre, {},{class: 'chosen-select'} %>
-		</div>
-	</div>
-	<div class="actions">
-    	<%= f.submit %>
-  	</div>
-<% end -%>
+<% if current_user.proyectos.any? %>
+	<%= form_for (@groupinv.groupinv_proyectos.build) do |f| %>
+		<%= f.hidden_field :groupinv_id %>
+		<%= f.label :proyecto_id, "Proponer proyectos" %>
+		<%= f.collection_select :proyecto_id, Proyecto.where(usuario: current_user), :id, :nombre, {},{class: 'chosen-select'} %>
+		<%= f.submit %>
+	<% end -%>
+<% end %>

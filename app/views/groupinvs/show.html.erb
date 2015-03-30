@@ -59,20 +59,7 @@
     <% end -%>
   </div>
   <div class="row">
-    <% if current_user.proyectos.any? %>
-      <%= form_for(@groupinv) do |f| %>
-        <div class="row">
-          <div class="columns small-6">
-            <%= f.hidden_field :id %>
-            <%= f.label :proyecto_ids, "Proponer proyectos" %>
-            <%= f.collection_select :proyecto_ids, Proyecto.where(usuario: current_user), :id, :nombre, {},{multiple: true, class: 'chosen-select'} %>
-          </div>
-        </div>
-        <div class="row actions">
-          <%= f.submit %>
-        </div>
-      <% end -%>
-    <% end %>
+    <%= render "groupinv_proyectos/form" %>
   </div>
 </div>
 

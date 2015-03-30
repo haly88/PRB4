@@ -13,3 +13,21 @@
 * estan bien los controladores de grupoinvsusuarios y gruopinv?
 
 * groupinv_id: params[:groupinv]?
+
+Hola como andan?
+Quería saber si el enfoque que estaba tomando es correcto? (me parece que no).
+
+Tengo 3 modelos con una relación de many to many though (grupos => grupo_proyectos => proyectos)
+
+Desde el show.html.erb de Grupos puedo asociar al grupo varios proyectos,
+para borrar los proyectos asociados, estoy usando el siguiente código:
+
+<%= link_to 'Borrar', grupo_proyecto_path(grupo: @grupo, proyecto: proyecto), method: :delete %>
+
+Funciona!!, pero calculo que no es lo mejor.
+
+Espero puedan ayudarme.
+Saludos
+
+
+
