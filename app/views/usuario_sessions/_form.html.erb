@@ -1,26 +1,11 @@
 <%= form_tag usuario_sessions_path, :method => :post do %>
-
-  <div class="row">
-    <div class="small-3 columns">
-      <%= label_tag :email %>
-    </div>
-    <div class="small-9 columns"><%= text_field_tag :email %></div>
-  </div>
-  <div class="row">
-    <div class="small-3 columns">
-      <%= label_tag :password %>
-    </div>
-    <div class="small-9 columns"><%= password_field_tag :password %></div>
-  </div>
-  <div class="row">
-    <div class="small-3 columns">
-      <%= label_tag :remember_me %>
-    </div>
-    <div class="small-9 columns"><%= check_box_tag :remember_me, 1, params[:remember_me] %></div>
-  </div>
-  <div class="row">
-    <div class="small-9 small-offset-3 columns"><%= submit_tag "Login" %></div>
-  </div>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <%= label_tag :remember_me %>
+  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+  <%= submit_tag "Login" %>
 <% end %>
 
 

@@ -2,7 +2,7 @@
 	<%= form_for (@groupinv.groupinv_proyectos.build) do |f| %>
 		<%= f.hidden_field :groupinv_id %>
 		<%= f.label :proyecto_id, "Proponer proyectos" %>
-		<%= f.collection_select :proyecto_id, Proyecto.where(usuario: current_user), :id, :nombre, {},{class: 'chosen-select'} %>
+		<%= f.collection_select :proyecto_id, Proyecto.includes(:groupinv_proyectos).where(usuario: current_user, groupinv_proyectos: {id: nil}), :id, :nombre, {},{class: 'chosen-select'} %>
 		<%= f.submit %>
 	<% end -%>
 <% end %>

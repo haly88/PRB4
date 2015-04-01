@@ -1,0 +1,7 @@
+<h3>Usuarios</h1>
+<% @groupinv.usuarios.each do |usuario| %>
+	<%= usuario.email %>
+	<% if @groupinv.administrador?(current_user) && usuario != current_user %>
+		<%= link_to 'Borrar', groupinv_usuario_path(groupinv: @groupinv, usuario: usuario), method: :delete %>
+	<% end -%></br>
+<% end %>

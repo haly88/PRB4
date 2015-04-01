@@ -11,45 +11,19 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.hidden_field :es_empresa%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :nombre%>
-      <%= f.text_field :nombre%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :apellido%>
-      <%= f.text_field :apellido%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :email%>
-      <%= f.text_field :email%>
-    </div>
-    <div class="small-3 columns">
-      <%= f.label :email_confirmation%>
-      <%= f.text_field :email_confirmation%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :password%>
-      <%= f.password_field :password%>
-    </div>
-    <div class="small-3 columns">
-      <%= f.label :password_confirmation%>
-      <%= f.password_field :password_confirmation%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-3 columns"><%= f.submit %></div>
-  </div>
-
+  <%= f.label :es_empresa%>
+  <%= f.check_box :es_empresa%>
+  <%= f.label :nombre%>
+  <%= f.text_field :nombre%>
+  <%= f.label :apellido%>
+  <%= f.text_field :apellido%>
+  <%= f.label :email%>
+  <%= f.text_field :email%>
+  <%= f.label :email_confirmation%>
+  <%= f.text_field :email_confirmation%>
+  <%= f.label :password%>
+  <%= f.password_field :password%>
+  <%= f.label :password_confirmation%>
+  <%= f.password_field :password_confirmation%>
+  <%= f.submit %>
 <% end %>
