@@ -53,3 +53,5 @@ gem 'ransack', '1.6.3'
 gem 'chosen-rails', '1.4.1'
 
 gem 'jquery-turbolinks', '2.1.0'
+
+gem 'geocoder', '1.2.8'

@@ -1,6 +1,9 @@
 class GroupinvProyectosController < ApplicationController
 
-	before_action :set_groupinv_proyecto, only: :destroy
+	before_action :set_groupinv_proyecto, only: [:show, :destroy]
+
+	def show
+	end
 
 	def create
 	@groupinv = Groupinv.find(groupinv_proyecto_params[:groupinv_id])
@@ -28,6 +31,8 @@ private
   # Use callbacks to share common setup or constraints between actions.
   def set_groupinv_proyecto
   	@groupinv_proyecto = GroupinvProyecto.find_by(groupinv: params[:groupinv], proyecto: params[:proyecto])
+  	@proyecto = @groupinv_proyecto.proyecto
+  	@groupinv = @groupinv_proyecto.groupinv
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

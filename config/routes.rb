@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :groupinv_proyectos, only: [:destroy, :create]
-
-  resources :proyecto_usuarios, only: [:destroy, :create]
+  resources :locations
+  resources :groupinv_proyectos
+  resources :proyecto_usuarios
   resources :proyectos
-
-  resources :groupinv_usuarios, only: [:destroy, :create, :update]
+  resources :groupinv_usuarios
   resources :groupinvs
-
   resources :products
   resources :usuario_sessions
   resources :usuarios do

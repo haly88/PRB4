@@ -9,35 +9,18 @@
   <% end %>
 </div>
 
-<p>
   <strong>Nombre:</strong>
-  <%= @groupinv.nombre %>
-</p>
-
-<p>
+  <%= @groupinv.nombre %></br>
   <strong>Personasmin:</strong>
-  <%= @groupinv.personasMin %>
-</p>
-
-<p>
+  <%= @groupinv.personasMin %></br>
   <strong>Personasmax:</strong>
-  <%= @groupinv.personasMax %>
-</p>
-
-<p>
+  <%= @groupinv.personasMax %></br>
   <strong>Montoingreso:</strong>
-  <%= @groupinv.montoIngreso %>
-</p>
-
-<p>
+  <%= @groupinv.montoIngreso %></br>
   <strong>Montomensual:</strong>
-  <%= @groupinv.montoMensual %>
-</p>
-
-<p>
+  <%= @groupinv.montoMensual %></br>
   <strong>Esadministrador:</strong>
-  <%= @groupinv.esAdministrador %>
-</p>
+  <%= @groupinv.esAdministrador %></br>
 
 <div class="small-6 columns">
   <%= render "groupinv_usuarios/index_form" %>
@@ -47,8 +30,4 @@
   <%= render "groupinv_proyectos/form" %>
 </div>
 
-<div>
-  <%= link_to 'Edit', edit_groupinv_path(@groupinv) %> |
-  <%= link_to 'Back', root_path %>
-</div>
 

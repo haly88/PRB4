@@ -1,8 +1,6 @@
 <h3>Proyectos</h3>
 <% @groupinv.proyectos.each do |proyecto| %>
-  <%= link_to proyecto.nombre, proyecto_path(proyecto) %>
-  <%= link_to 'Votar', groupinv_usuario_path(groupinv: @groupinv, proyecto: proyecto), method: :put %>
-  <% if @groupinv.administrador?(current_user) %>
-    <%= link_to 'Borrar', groupinv_proyecto_path(groupinv: @groupinv, proyecto: proyecto), method: :delete %></br>
-	<% end -%>
+  <%= link_to proyecto.nombre, groupinv_proyecto_path(groupinv: @groupinv, proyecto: proyecto) %>
+  <%= "***" if proyecto.groupinv_usuarios.any? %>
+  <%= link_to 'Borrar', groupinv_proyecto_path(groupinv: @groupinv, proyecto: proyecto), method: :delete if @groupinv.administrador?(current_user) %></br>
 <% end -%>
