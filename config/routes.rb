@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :proyecto_usuarios
   resources :proyectos
   resources :groupinv_usuarios
-  resources :groupinvs
+  resources :groupinvs do
+    resources :comentarios
+  end
   resources :products
   resources :usuario_sessions
   resources :usuarios do

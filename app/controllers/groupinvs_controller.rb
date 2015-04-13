@@ -11,6 +11,9 @@ class GroupinvsController < ApplicationController
   # GET /groupinvs/1
   # GET /groupinvs/1.json
   def show
+    @comentable = @groupinv
+    @comentarios = @comentable.comentarios
+    @comentario = Comentario.new
   end
 
   # GET /groupinvs/new

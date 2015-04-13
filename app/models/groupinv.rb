@@ -1,5 +1,7 @@
 class Groupinv < ActiveRecord::Base
 
+	has_many :comentarios, as: :comentable
+
 	has_many :groupinv_usuarios, dependent: :destroy
 	has_many :usuarios, through: :groupinv_usuarios
 
