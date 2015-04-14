@@ -25,7 +25,7 @@ class ComentariosController < ApplicationController
   private
 
   def load_comentable
-		klass = [Groupinv].detect { |c| params["#{c.name.underscore}_id"]}
+		klass = [Groupinv, GroupinvProyecto].detect { |c| params["#{c.name.underscore}_id"]}
 		@comentable = klass.find(params["#{klass.name.underscore}_id"])
 	end
 

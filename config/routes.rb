@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :locations
-  resources :groupinv_proyectos
+  resources :groupinv_proyectos do
+    resources :comentarios
+  end
   resources :proyecto_usuarios
   resources :proyectos
   resources :groupinv_usuarios

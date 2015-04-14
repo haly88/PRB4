@@ -3,21 +3,24 @@ class GroupinvProyectosController < ApplicationController
 	before_action :set_groupinv_proyecto, only: [:show, :destroy]
 
 	def show
+		@comentable = @groupinv_proyecto
+    @comentarios = @comentable.comentarios
+    @comentario = Comentario.new
 	end
 
 	def create
 	@groupinv = Groupinv.find(groupinv_proyecto_params[:groupinv_id])
-    @groupinv_proyecto = @groupinv.groupinv_proyectos.new(groupinv_proyecto_params)
-	    respond_to do |format|
-	      if @groupinv_proyecto.save
-	        format.html { redirect_to groupinv_path(@groupinv), notice: 'groupinv_proyecto Guardado' }
-	        format.json { render :show, status: :created, location: @groupinv_proyecto }
-	      else
-	        format.html { redirect_to groupinv_path(@groupinv) }
-	        format.json { render json: @groupinv_proyecto.errors, status: :unprocessable_entity }
-	      end
-	    end
-  	end
+  @groupinv_proyecto = @groupinv.groupinv_proyectos.new(groupinv_proyecto_params)
+    respond_to do |format|
+      if @groupinv_proyecto.save
+        format.html { redirect_to groupinv_path(@groupinv), notice: 'groupinv_proyecto Guardado' }
+        format.json { render :show, status: :created, location: @groupinv_proyecto }
+      else
+        format.html { redirect_to groupinv_path(@groupinv) }
+        format.json { render json: @groupinv_proyecto.errors, status: :unprocessable_entity }
+      end
+	   end
+  end
 
 	def destroy
 	@groupinv_proyecto.destroy
@@ -30,7 +33,11 @@ class GroupinvProyectosController < ApplicationController
 private
   # Use callbacks to share common setup or constraints between actions.
   def set_groupinv_proyecto
+  	binding.pry
   	@groupinv_proyecto = GroupinvProyecto.find_by(groupinv: params[:groupinv], proyecto: params[:proyecto])
+  	if @groupinv_proyecto.nil? 
+  		@groupinv_proyecto = GroupinvProyecto.find(params[:id])
+  	end
   	@proyecto = @groupinv_proyecto.proyecto
   	@groupinv = @groupinv_proyecto.groupinv
   end

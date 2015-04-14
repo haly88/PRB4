@@ -1,21 +1,15 @@
 <%= link_to 'Votar', groupinv_usuario_path(groupinv: @groupinv, proyecto: @proyecto), method: :put %>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @proyecto.nombre %>
-</p>
+  <%= @proyecto.nombre %></br>
+  <%= @proyecto.cuota_inicial %></br>
+  <%= @proyecto.cuota_mensual %></br>
+  <%= @proyecto.usuario.nombre %></br>
 
-<p>
-  <strong>Cuota inicial:</strong>
-  <%= @proyecto.cuota_inicial %>
-</p>
+<div class="row">
+	<div class="small-6 columns">
+		<h3>Commentario</h3>
+		<%= render "comentarios/comentarios" %>
+		<%= render "comentarios/form" %>
+	</div>
+</div>
 
-<p>
-  <strong>Cuota mensual:</strong>
-  <%= @proyecto.cuota_mensual %>
-</p>
-
-<p>
-  <strong>Usuario:</strong>
-  <%= @proyecto.usuario.nombre %>
-</p>
