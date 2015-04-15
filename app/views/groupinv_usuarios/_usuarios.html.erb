@@ -1,6 +1,6 @@
 <h3>Usuarios</h1>
 <% @groupinv.usuarios.each do |usuario| %>
-	<%= image_tag	avatar_url(usuario) %>
+	<%= image_tag avatar_url(usuario) %>
 	<%= usuario.email %>
 	<%= "ADM" if @groupinv.administrador?(usuario) %>
 	<% if @groupinv.administrador?(current_user) && usuario != current_user %>

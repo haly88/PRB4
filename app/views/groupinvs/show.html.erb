@@ -22,12 +22,14 @@
   <strong>Esadministrador:</strong>
   <%= @groupinv.esAdministrador %></br>
 
-<div class="small-6 columns">
-  <%= render "groupinv_usuarios/usuarios" %>
-</div>
-<div class="small-6 columns">
-  <%= render "groupinv_proyectos/proyectos" %>
-  <%= render "groupinv_proyectos/form" %>
+<div class="row">
+  <div class="small-6 columns">
+    <%= render "groupinv_usuarios/usuarios" %>
+  </div>
+  <div class="small-6 columns">
+    <%= render "groupinv_proyectos/proyectos" %>
+    <%= render "groupinv_proyectos/form" %>
+  </div>
 </div>
 
 <div class="row">
