@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <%= f.label :es_empresa%>
   <%= f.check_box :es_empresa%>
   <%= f.label :nombre%>
@@ -25,5 +24,6 @@
   <%= f.password_field :password%>
   <%= f.label :password_confirmation%>
   <%= f.password_field :password_confirmation%>
+  <%= f.file_field :imagen %>
   <%= f.submit %>
 <% end %>

@@ -14,7 +14,7 @@ gem 'uglifier', '2.6.0'
 gem 'coffee-rails', '4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', '0.12.1',  platforms: :ruby
-
+# gem 'execjs', '2.2.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '4.0.2'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -39,17 +39,11 @@ gem 'spring', '1.2.0',       group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'pry-rails', '0.3.3', group: [:development, :test]
-
 gem 'foundation-rails', '5.5.0.0'
-
 gem 'sorcery', '0.8.6'
-
-# gem 'execjs', '2.2.2'
-
 gem 'ransack', '1.6.3'
-
 gem 'chosen-rails', '1.4.1'
-
 gem 'jquery-turbolinks', '2.1.0'
-
 gem 'geocoder', '1.2.8'
+gem 'mini_magick', '4.2.3'
+gem 'carrierwave', '0.10.0'

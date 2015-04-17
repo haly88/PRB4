@@ -10,6 +10,7 @@
   <dd><%= @usuario.crypted_password %></dd>
   <dt><strong><%= model_class.human_attribute_name(:salt) %>:</strong></dt>
   <dd><%= @usuario.salt %></dd>
+  <dd><%= image_tag @usuario.imagen_url %></dd>
 </dl>
 
 <div class="form-actions">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413152858) do
+ActiveRecord::Schema.define(version: 20150417010054) do
 
   create_table "comentarios", force: :cascade do |t|
     t.text     "descripcion"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20150413152858) do
     t.string   "apellido"
     t.boolean  "es_empresa"
     t.string   "razon_social"
+    t.string   "imagen"
   end
 
   add_index "usuarios", ["activation_token"], name: "index_usuarios_on_activation_token"

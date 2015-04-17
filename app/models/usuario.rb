@@ -13,5 +13,7 @@ class Usuario < ActiveRecord::Base
   validates :razon_social, presence: true, if: :es_empresa
   validates :nombre, :apellido, presence: true, unless: :es_empresa
 
+  mount_uploader :imagen, ImagenUploader
+
   
 end
