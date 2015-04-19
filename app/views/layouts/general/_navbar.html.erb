@@ -1,4 +1,4 @@
-<nav class="top-bar">
+<nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
       <h1><%= link_to "PRB4", root_path %></a></h1>
@@ -16,11 +16,15 @@
         <li class="divider"></li>
         <li><%= link_to "Proyectos", proyectos_path %></li>
     </ul>
-    <ul class="right">
-        <li> <%= link_to "log out #{current_user.email}", logout_path, method: :post %> </li>
-        <li class="divider"></li>
-          <li> <%= link_to 'Editar usuario', edit_usuario_path(current_user) %> </li>
-        </ul>
+      <ul class="right">
+        <li class="has-dropdown not_click">
+          <a href="#"><%= image_tag current_user.imagen_url(:thumb) %></a>
+          <ul class="dropdown"> 
+            <li><%= link_to 'Editar', edit_usuario_path(current_user) %></li>
+            <li><%= link_to 'Salir', logout_path, method: :post %></li>
+          </ul>
+        </li>
+      </ul>
     <% else %>
       <ul class="right">
         <li class="divider"></li>

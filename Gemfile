@@ -18,7 +18,7 @@ gem 'therubyracer', '0.12.1',  platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '4.0.2'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '2.5.3'
+#gem 'turbolinks', '2.5.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '2.2.6'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -43,7 +43,7 @@ gem 'foundation-rails', '5.5.0.0'
 gem 'sorcery', '0.8.6'
 gem 'ransack', '1.6.3'
 gem 'chosen-rails', '1.4.1'
-gem 'jquery-turbolinks', '2.1.0'
+#gem 'jquery-turbolinks', '2.1.0'
 gem 'geocoder', '1.2.8'
 gem 'mini_magick', '4.2.3'
 gem 'carrierwave', '0.10.0'

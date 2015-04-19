@@ -1,11 +1,31 @@
 <%= form_tag usuario_sessions_path, :method => :post do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= label_tag :remember_me %>
-  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-  <%= submit_tag "Login" %>
+	<div class="row">
+		<div class="columns small-12">
+			<h3>Ingresar</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="columns small-12">
+			<%= label_tag :email %>
+  		<%= text_field_tag :email %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="columns small-12">
+			<%= label_tag :password %>
+  		<%= password_field_tag :password %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="columns small-12">
+			<%= check_box_tag :remember_me, 1, params[:remember_me] %> Remember me
+		</div>
+	</div>
+	<div class="row">
+		<div class="columns small-12">
+			<%= submit_tag 'Logearme', class: 'button' %>
+		</div>
+	</div>
 <% end %>
 
 

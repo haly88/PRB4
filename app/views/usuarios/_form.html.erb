@@ -10,20 +10,31 @@
       </ul>
     </div>
   <% end %>
-  <%= f.label :es_empresa%>
-  <%= f.check_box :es_empresa%>
-  <%= f.label :nombre%>
-  <%= f.text_field :nombre%>
-  <%= f.label :apellido%>
-  <%= f.text_field :apellido%>
-  <%= f.label :email%>
-  <%= f.text_field :email%>
-  <%= f.label :email_confirmation%>
-  <%= f.text_field :email_confirmation%>
-  <%= f.label :password%>
-  <%= f.password_field :password%>
-  <%= f.label :password_confirmation%>
-  <%= f.password_field :password_confirmation%>
-  <%= f.file_field :imagen %>
-  <%= f.submit %>
+  <div class="row">
+    <div class="columns medium-6 small-12">
+      <%= f.select(:es_empresa, options_for_select([['Particular', 0],['Empresa', 1]])) %>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="columns medium-6 small-12">
+      <%= f.label :email%>
+      <%= f.text_field :email%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="columns medium-6 small-12">
+      <%= f.label :password%>
+      <%= f.password_field :password%>
+    </div>
+    <div class="columns medium-6 small-12">
+      <%= f.label :password_confirmation%>
+      <%= f.password_field :password_confirmation%>
+    </div>
+  </div>
+    <%= f.file_field :imagen %>
+  <div class="row">
+      <div class="columns medium-6 small-12">
+      <%= f.submit 'Registrarme', class: 'button'%>
+      </div>
+  </div>
 <% end %>

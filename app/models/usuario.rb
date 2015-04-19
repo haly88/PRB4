@@ -7,11 +7,11 @@ class Usuario < ActiveRecord::Base
   has_many :proyectos
 
   validates :password, length: { minimum: 3 }
-  validates :password, :email, confirmation: true
-  validates :password_confirmation, :email_confirmation, presence: true
+  validates :password, confirmation: true
+  validates :password_confirmation, presence: true
   validates :email, uniqueness: true
-  validates :razon_social, presence: true, if: :es_empresa
-  validates :nombre, :apellido, presence: true, unless: :es_empresa
+  #validates :razon_social, presence: true, if: :es_empresa
+  #validates :nombre, :apellido, presence: true, unless: :es_empresa
 
   mount_uploader :imagen, ImagenUploader
 
