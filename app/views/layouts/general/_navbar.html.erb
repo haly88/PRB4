@@ -20,7 +20,7 @@
         <li class="has-dropdown not_click">
           <a href="#"><%= image_tag current_user.imagen_url(:thumb) %></a>
           <ul class="dropdown"> 
-            <li><%= link_to 'Editar', edit_usuario_path(current_user) %></li>
+            <li><%= link_to 'Configuracion', edit_usuario_path(current_user) %></li>
             <li><%= link_to 'Salir', logout_path, method: :post %></li>
           </ul>
         </li>
