@@ -8,19 +8,19 @@ class Groupinv < ActiveRecord::Base
 	has_many :groupinv_proyectos, dependent: :destroy
 	has_many :proyectos, through: :groupinv_proyectos
 
-	def full_group
-		[nombre, personasMin, personasMax].compact.join(' ')
-	end
-	
 	def usuario_pertenece?(current_user)
 		control = false
 		usuarios.each do |usuario|
 			control = true if usuario == current_user
 		end
 		control
-    end
+  end
 
-    def administrador?(usuario)
-    	self.groupinv_usuarios.find_by(usuario: usuario).administrador.present? if usuario_pertenece?(usuario)
-    end
+  def administrador?(usuario)
+  	self.groupinv_usuarios.find_by(usuario: usuario).administrador.present? if usuario_pertenece?(usuario)
+  end
+
+  def full_group
+		[nombre, personasMin, personasMax].compact.join(' ')
+	end
 end

@@ -12,17 +12,27 @@
   <% end %>
 
  <div class="row">
-  <div class="columns medium-6 small-12">
-    <%= f.label :nombre%>
-    <%= f.text_field :nombre%>
-  </div>
-  <div class="columns medium-6 small-12">
-    <%= f.label :apellido%>
-    <%= f.text_field :apellido%>
-  </div>
+  <% if @usuario.es_empresa %>
+    <div class="columns medium-6 small-12">
+      <%= f.label :razon_social%>
+      <%= f.text_field :razon_social%>
+    </div>
+  <% else %>
+    <div class="columns medium-6 small-12">
+      <%= f.label :nombre%>
+      <%= f.text_field :nombre%>
+    </div>
+    <div class="columns medium-6 small-12">
+      <%= f.label :apellido%>
+      <%= f.text_field :apellido%>
+    </div>
+  <% end %>
 </div>
 <div class="row">
-  <div class="columns medium-6 small-12">
+  <div class="columns medium-2">
+    <%= image_tag @usuario.imagen_url(:thumb) %>
+  </div>
+  <div class="columns medium-10">
     <%= f.file_field :imagen %>
   </div>
 </div>  

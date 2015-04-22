@@ -47,3 +47,8 @@ gem 'chosen-rails', '1.4.1'
 gem 'geocoder', '1.2.8'
 gem 'mini_magick', '4.2.3'
 gem 'carrierwave', '0.10.0'
+group :development do
+  gem 'better_errors', '2.1.1'
+  gem 'binding_of_caller', '0.7.2'
+  gem 'meta_request'
+end

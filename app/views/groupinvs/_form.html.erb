@@ -1,16 +1,5 @@
 <%= form_for(@groupinv) do |f| %>
-  <% if @groupinv.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@groupinv.errors.count, "error") %> prohibited this groupinv from being saved:</h2>
-
-      <ul>
-      <% @groupinv.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <%= render "shared/errors", modelo: @groupinv %>
   <div class="field">
     <%= f.label :nombre %>
     <%= f.text_field :nombre %>
@@ -30,10 +19,6 @@
   <div class="field">
     <%= f.label :montoMensual %>
     <%= f.text_field :montoMensual %>
-  </div>
-  <div class="field">
-    <%= f.label :esAdministrador %>
-    <%= f.check_box :esAdministrador %>
   </div>
   <div class="actions">
     <%= f.submit %>
