@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417010054) do
+ActiveRecord::Schema.define(version: 20150423004159) do
 
   create_table "comentarios", force: :cascade do |t|
     t.text     "descripcion"
@@ -57,7 +57,12 @@ ActiveRecord::Schema.define(version: 20150417010054) do
     t.boolean  "esAdministrador"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+    t.text     "descripcion"
+    t.integer  "tipos_inv_id"
+    t.string   "imagen"
   end
+
+  add_index "groupinvs", ["tipos_inv_id"], name: "index_groupinvs_on_tipos_inv_id"
 
   create_table "locations", force: :cascade do |t|
     t.string   "address"
@@ -85,6 +90,12 @@ ActiveRecord::Schema.define(version: 20150417010054) do
   end
 
   add_index "proyectos", ["usuario_id"], name: "index_proyectos_on_usuario_id"
+
+  create_table "tipos_invs", force: :cascade do |t|
+    t.string   "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "email",                        null: false

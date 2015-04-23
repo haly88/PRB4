@@ -1,5 +1,5 @@
-<% @groupinv.usuarios.each do |usuario| %>
 <h3>Usuarios</h1>
+<% @groupinv.usuarios.each do |usuario| %>
 	<%= image_tag usuario.imagen_url(:thumb) %>
 	<%= usuario.email %>
 	<%= "ADM" if @groupinv.administrador?(usuario) %>
