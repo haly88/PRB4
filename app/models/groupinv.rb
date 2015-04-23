@@ -1,5 +1,7 @@
 class Groupinv < ActiveRecord::Base
 
+	belongs_to :tipos_inv
+
 	has_many :comentarios, as: :comentable
 
 	has_many :groupinv_usuarios, dependent: :destroy
@@ -7,6 +9,8 @@ class Groupinv < ActiveRecord::Base
 
 	has_many :groupinv_proyectos, dependent: :destroy
 	has_many :proyectos, through: :groupinv_proyectos
+
+	mount_uploader :imagen, ImagenUploader
 
 	def usuario_pertenece?(current_user)
 		control = false

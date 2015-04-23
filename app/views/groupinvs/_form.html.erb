@@ -20,6 +20,18 @@
     <%= f.label :montoMensual %>
     <%= f.text_field :montoMensual %>
   </div>
+  <div class="row">
+  <div class="columns medium-2">
+    <%= image_tag @groupinv.imagen_url(:thumb) %>
+  </div>
+  <div class="columns medium-10">
+    <%= f.label :imagen, "Subir imagen" %>
+    <%= f.file_field :imagen %>
+  </div>
+  <%= f.label :descripcion %>
+  <%= f.text_area :descripcion, rows: 4 %></br>
+  <%= f.collection_select :tipos_inv_id, TiposInv.all, :id, :nombre, {},{class: 'chosen'} %>
+</div>  
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,18 +1,15 @@
 <%= form_for(@proyecto) do |f| %>
   <%= render "shared/errors", modelo: @proyecto %>
-  <div class="field">
+
     <%= f.label :nombre %><br>
     <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
+
     <%= f.label :cuota_inicial %><br>
     <%= f.text_field :cuota_inicial %>
-  </div>
-  <div class="field">
+
     <%= f.label :cuota_mensual %><br>
     <%= f.text_field :cuota_mensual %>
-  </div>
-  <div class="actions">
+
     <%= f.submit %>
-  </div>
+
 <% end %>

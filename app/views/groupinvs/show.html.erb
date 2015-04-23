@@ -9,8 +9,11 @@
   <% end %>
 </div>
 
+  <%= image_tag @groupinv.imagen_url(:thumb) %>
   <strong>Nombre:</strong>
   <%= @groupinv.nombre %></br>
+  <strong>Tipo Inv:</strong>
+  <%= @groupinv.tipos_inv.nombre %></br>
   <strong>Personasmin:</strong>
   <%= @groupinv.personasMin %></br>
   <strong>Personasmax:</strong>
@@ -19,8 +22,8 @@
   <%= @groupinv.montoIngreso %></br>
   <strong>Montomensual:</strong>
   <%= @groupinv.montoMensual %></br>
-  <strong>Esadministrador:</strong>
-  <%= @groupinv.esAdministrador %></br>
+  <strong>Descripcion:</strong>
+  <%= @groupinv.descripcion %></br>
 
 <div class="row">
   <div class="small-6 columns">
