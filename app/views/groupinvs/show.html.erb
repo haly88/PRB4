@@ -1,15 +1,17 @@
 <div class="row">
-  <% if @groupinv.usuario_pertenece?(current_user) %>
-    <%= link_to 'Salir del Groupinv', groupinv_usuario_path(groupinv: @groupinv, usuario: current_user), method: :delete %>
-  <% else %>
-    <%= link_to 'Unirse al Groupinv', groupinv_usuarios_path(groupinv: @groupinv), method: :post %>
-  <% end %>
-  <% if @groupinv.administrador?(current_user) %>
-    <%= link_to 'Borrar Groupinv', groupinv_path(@groupinv), method: :delete %>
-  <% end %>
+  <div class="medium-12 columns">
+    <% if @groupinv.usuario_pertenece?(current_user) %>
+      <%= link_to 'Salir del Groupinv', groupinv_usuario_path(groupinv: @groupinv, usuario: current_user), method: :delete %>
+    <% else %>
+      <%= link_to 'Unirse al Groupinv', groupinv_usuarios_path(groupinv: @groupinv), method: :post %>
+    <% end %>
+    <% if @groupinv.administrador?(current_user) %>
+      <%= link_to 'Borrar Groupinv', groupinv_path(@groupinv), method: :delete %>
+    <% end %>
+  </div>
 </div>
 
-  <%= image_tag @groupinv.imagen_url(:thumb) %>
+  <%= image_tag @groupinv.imagen_url(:thumb100) %>
   <strong>Nombre:</strong>
   <%= @groupinv.nombre %></br>
   <strong>Tipo Inv:</strong>
@@ -26,17 +28,17 @@
   <%= @groupinv.descripcion %></br>
 
 <div class="row">
-  <div class="small-6 columns">
+  <div class="medium-6 columns">
     <%= render "groupinv_usuarios/usuarios" %>
   </div>
-  <div class="small-6 columns">
+  <div class="medium-6 columns">
     <%= render "groupinv_proyectos/proyectos" %>
     <%= render "groupinv_proyectos/form" %>
   </div>
 </div>
 
 <div class="row">
-  <div class="small-6 columns">
+  <div class="medium-6 columns">
     <%= render "comentarios/comentarios" %>
     <%= render "comentarios/form" %>
   </div>
